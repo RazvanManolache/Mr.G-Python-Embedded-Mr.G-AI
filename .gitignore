@@ -1,0 +1,9 @@
+__pycache__/
+*.py[cod]
+Lib/site-packages/*
+!Lib/site-packages/wheel*
+!Lib/site-packages/pip*
+!Lib/site-packages/setuptools*
+!Lib/site-packages/pkg_resources
+!Lib/site-packages/_distutils_hack
+!Lib/site-packages/distutils-precedence.pth
