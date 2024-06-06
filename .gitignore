@@ -1,5 +1,5 @@
 __pycache__/
-*.py[cod]
+*.py[co]
 Lib/site-packages/*
 !Lib/site-packages/wheel*
 !Lib/site-packages/pip*
