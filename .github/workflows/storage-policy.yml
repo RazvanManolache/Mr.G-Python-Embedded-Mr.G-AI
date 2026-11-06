@@ -1,0 +1,28 @@
+name: Storage policy
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+  schedule:
+  - cron: 37 4 * * *
+permissions:
+  contents: read
+  actions: write
+concurrency:
+  group: storage-policy-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+    - uses: actions/checkout@v7.0.1
+      with:
+        persist-credentials: false
+    - uses: actions/github-script@v9
+      env:
+        STORAGE_EXISTING_LARGE_BLOBS: '["8439f271e8084f40ec7ba14163651aa0321c3677", "7c9b9101b5594027485e3f31a3981b4e5a0fb26e", "d23d2355b526364e4345b120ceb73f8157915f80", "34b8c93f2014040c8a0c8495a1eaef0fbb29010b"]'
+      with:
+        script: |
+          const guard = require('./.github/scripts/storage-guard.cjs');
+          await guard({github, context, core});

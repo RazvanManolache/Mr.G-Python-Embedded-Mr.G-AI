@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "build_downloads": "ci-latest prerelease; latest per artifact name; default branch only",
+  "actions_artifacts": "No persistent build artifacts. Camera tag-to-release transfer only, one day, deleted after publishing.",
+  "max_git_file_mib": 50,
+  "max_git_repository_mib": 1024,
+  "max_release_asset_mib": 1900,
+  "max_ci_release_gib": 4,
+  "cache_cleanup_target_gib": 5,
+  "artifact_cleanup_after_days": 2,
+  "existing_large_blob_exceptions": [
+    "8439f271e8084f40ec7ba14163651aa0321c3677",
+    "7c9b9101b5594027485e3f31a3981b4e5a0fb26e",
+    "d23d2355b526364e4345b120ceb73f8157915f80",
+    "34b8c93f2014040c8a0c8495a1eaef0fbb29010b"
+  ]
+}
